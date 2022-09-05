@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mern-prod-ingress
+  namespace: production
+  annotations:
+    cert-manager.io/cluster-issuer: "mern-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - production.irwankilay.com
+    secretName: mern-prod-tls
+  rules:
+  - host: production.irwankilay.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mern-frontend
+            port:
+              number: 3000
+      - path: /users
+        pathType: Prefix
+        backend:
+          service:
+            name: mern-backend
+            port:
+              number: 5000
