@@ -9,7 +9,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - production.irwankilay.com
+    - production.victormongi.fun
     secretName: mern-prod-tls
   rules:
   - host: production.irwankilay.com
