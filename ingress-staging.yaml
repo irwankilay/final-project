@@ -9,7 +9,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - staging.irwankilay.com
+    - staging.victormongi.fun
     secretName: mern-staging-tls
   rules:
   - host: staging.irwankilay.com
